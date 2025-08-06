@@ -8,8 +8,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 
+app.get('/api/health',(req,res)=>{
+  res.status(200).json({status: "OK"})
+})
 app.get("/",(req: Request, res: Response)=>{
-  res.send("Hello from Typescript backend");
+  res.send("Hello from backend");
 });
 
 app.listen(PORT, ()=>{
