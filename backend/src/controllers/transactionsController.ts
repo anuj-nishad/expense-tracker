@@ -28,7 +28,7 @@ export async function getTransactionsByUserId(req: Request, res: Response){
     res.status(200).json(transactions);
   } catch (error) {
     console.log('Error getting Transactions',error);
-    res.status(404).json({message: "Internal Server Error"});
+    res.status(500).json({message: "Internal Server Error"});
   }
 }
 
@@ -73,7 +73,7 @@ export async function deleteTransactionById(req:Request, res: Response){
       }
     });
 
-    if(!result) return res.status(400).json({message: "Transaction Not Found"});
+    if(!result) return res.status(404).json({message: "Transaction Not Found"});
     res.status(200).json({message: "Transaction Deleted Succesfully"});
   } catch (error) {
     console.log('Error deleting transaction',error);

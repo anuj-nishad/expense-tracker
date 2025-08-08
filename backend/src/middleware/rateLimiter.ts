@@ -1,5 +1,4 @@
 import ratelimit from "../config/upstash.js";
-import {db} from "../lib/db.js";
 import type {Request, Response, NextFunction} from "express";
 
 const rateLimiter = async(req:Request,res:Response,next:NextFunction):Promise<void>=>{
