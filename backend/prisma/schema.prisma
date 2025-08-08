@@ -8,11 +8,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User{
+  id            String @id @default(uuid())
+  name          String 
+  email         String @unique
+
+  transactions  transactions[]
+}
 model transactions{
   id          String @id @default(uuid())
   userId      String 
-  title       String?
+  title       String
   amount      Int 
   category    String
   created_at  DateTime @default(now())
+
+  user        User @relation(fields: [userId], references: [id])
 }
