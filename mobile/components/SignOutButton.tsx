@@ -1,22 +1,22 @@
+import { styles } from '@/assets/styles/home.styles';
+import { COLORS } from '@/constants/colors';
 import { useClerk } from '@clerk/clerk-expo'
-import * as Linking from 'expo-linking'
-import { Text, TouchableOpacity } from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
+import { Alert, Text, TouchableOpacity, View } from 'react-native'
 
 export const SignOutButton = () => {
   const { signOut } = useClerk();
   const handleSignOut = async () => {
-    try {
-      await signOut();
-      Linking.openURL(Linking.createURL('/'));
-      
-    } catch (err) {
-
-      console.error(JSON.stringify(err, null, 2));
-    }
+    Alert.alert("Logout", "Are you sure you want to logout?",[
+      {text:"Cancel", style:"cancel"},
+      {text: "Logout", style: "destructive", onPress: () => signOut()}
+    ])
   }
   return (
-    <TouchableOpacity onPress={handleSignOut}>
-      <Text>Sign out</Text>
+    <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
+      <View>
+      <Ionicons name='log-out-outline' size={22} color={COLORS.text}/>
+      </View>
     </TouchableOpacity>
   )
 }

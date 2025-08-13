@@ -31,10 +31,10 @@ export default function SignUpScreen() {
 
       setPendingVerification(true);
     } catch (err: any) {
-      if(err.errors[0].code === "form_identifier_exists"){
-        setError("Email address already taken. Try another")
+      if (err.errors[0].code === "form_identifier_exists") {
+        setError("Email address already taken. Try another");
       }
-      setError("An error occurred. Please try again")
+      setError("An error occurred. Please try again");
     }
   }
 
@@ -49,7 +49,8 @@ export default function SignUpScreen() {
 
       if (signUpAttempt.status === 'complete') {
         await setActive({ session: signUpAttempt.createdSessionId });
-        router.replace('/');
+        router.replace("/");
+
       } else {
 
         console.error(JSON.stringify(signUpAttempt, null, 2));
@@ -91,8 +92,8 @@ export default function SignUpScreen() {
 
   return (
     <KeyboardAwareScrollView
-      style={{flex: 1}}
-      contentContainerStyle={{flexGrow: 1}}
+      style={{ flex: 1 }}
+      contentContainerStyle={{ flexGrow: 1 }}
       enableOnAndroid={true}
       enableAutomaticScroll={true}
     >
@@ -132,7 +133,7 @@ export default function SignUpScreen() {
 
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Already have an account?</Text>
-          <TouchableOpacity onPress={()=>router.back()}>
+          <TouchableOpacity onPress={() => router.back()}>
             <Text style={styles.linkText}>Sign in</Text>
           </TouchableOpacity>
         </View>

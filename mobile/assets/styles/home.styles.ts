@@ -114,6 +114,7 @@ export const styles = StyleSheet.create({
   },
   statDivider: {
     borderRightWidth: 1,
+    marginRight:25,
     borderColor: COLORS.border,
   },
   balanceStatLabel: {
