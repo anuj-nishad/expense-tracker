@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import transactionsRoutes from "./routes/transactionsRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
 import rateLimiter from "./middleware/rateLimiter.js";
 dotenv.config();
 
@@ -16,7 +15,6 @@ app.get('/api/health',(req,res)=>{
 });
 
 app.use("/api/transactions", transactionsRoutes);
-app.use("/api/user",userRoutes)
 
 app.listen(PORT, ()=>{
   console.log(`Server is  running on ${PORT}`)

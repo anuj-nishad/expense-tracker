@@ -118,7 +118,6 @@ export async function getSummaryByUserId(req:Request,res:Response){
         },
       },
     });
-
     res.status(200).json({
     balance: balance._sum.amount || 0,
     income: income._sum.amount || 0,
