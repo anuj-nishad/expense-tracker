@@ -40,6 +40,6 @@ A **React Native** app built with **Expo** to help users track their **income** 
 - **Authentication:** Clerk
 - **Backend:** PostgreSQL with Prisma ORM
 - **State Management:** React Hooks
-- **Styling:** Tailwind CSS (if used) or default React Native styles
+- **Styling:** Tailwind CSS
 
 ---
