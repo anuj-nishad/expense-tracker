@@ -24,13 +24,13 @@ A **React Native** app built with **Expo** to help users track their **income** 
 ![Sign In](./screenshots/signin.jpeg)
 
 ### 3. Verify Email
-![Verify Email](./screenshots/verifyemail.jpeg)
+![Verify Email](./screenshots/verify.jpeg)
 
 ### 4. Dashboard
 ![Dashboard](./screenshots/dashboard.jpeg)
 
 ### 5. Create Transaction
-![Create Transaction](./screenshots/createTransaction.jpeg)
+![Create Transaction](./screenshots/create.jpeg)
 
 ---
 
